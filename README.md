@@ -1,7 +1,7 @@
 # tinytemp
 Using an ATtiny, read temperature from a DS18B20 and transmit it with a 433 MHz tx module.
 
-I got tired of buying overpriced inaccurate wireless thermometers for my house monitoring system, so decided to make my own instead. The current version uses the SD18B20 sensor which is ±0.5°C accurate, but I've been tempted to spend a little extra for the impressive ±0.1°C accurate [IST TSIC 506F](http://se.farnell.com/ist-innovative-sensor-technology/tsic-506f-to92/sensor-temp-digital--0-1k-to92/dp/2191826).
+I got tired of buying overpriced inaccurate wireless thermometers for my house monitoring system, so decided to make my own instead. The current version uses a DS18B20 sensor which is ±0.5°C accurate, but I've been tempted to spend a little extra for the impressive ±0.1°C accurate [IST TSIC 506F](http://se.farnell.com/ist-innovative-sensor-technology/tsic-506f-to92/sensor-temp-digital--0-1k-to92/dp/2191826).
 
 This program uses my [FineOffset library](https://github.com/zagor/FineOffset) 
 and Paul Stoffregen's [OneWire library](https://github.com/PaulStoffregen/OneWire.git).
