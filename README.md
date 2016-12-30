@@ -1,7 +1,7 @@
 # tinytemp
 Using an ATtiny, read temperature from a DS18B20 and transmit it with a 433 MHz tx module.
 
-I got tired of buying overpriced inaccurate wireless thermometers for my house monitoring system, so decided to make my own instead.
+I got tired of buying overpriced inaccurate wireless thermometers for my home monitoring, so decided to make my own.
 
 This program uses my [FineOffset library](https://github.com/zagor/FineOffset) 
 and Paul Stoffregen's [OneWire library](https://github.com/PaulStoffregen/OneWire.git).
