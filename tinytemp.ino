@@ -6,17 +6,24 @@
  * License: MIT, see file LICENSE
  *
  */
-#include <OneWire.h>
-#include <FineOffset.h>
+#include <avr/sleep.h>
+#include <avr/wdt.h>
 
-# include <avr/sleep.h>
-# include <avr/wdt.h>
-# define TX_PIN 2
-# define TEMP_PIN 0
-# define LED_PIN 3
+#include "OneWire.h"
+#include "FineOffset.h"
 
+#define TX_PIN 2
+#define TEMP_PIN 0
+#define LED_PIN 3
+
+/* change this to be unique per device in your area */
 #define DEVICE_ID 202
+
+/* if you have calibrated the sensor, put the correction value here */
+#define TEMP_CORRECTION -0.0000
+
 #define EBADTEMP -999
+
 
 OneWire ow(TEMP_PIN);
 FineOffset tx(TX_PIN);
@@ -85,7 +92,7 @@ double read_temp(void)
   if (OneWire::crc8(data, 8) != data[8])
     return EBADTEMP;
 
-  return (data[1] << 8 | data[0]) / 16.0;
+  return (data[1] << 8 | data[0]) / 16.0 + TEMP_CORRECTION;
 }
 
 void loop(void)
@@ -100,7 +107,7 @@ void loop(void)
 
   digitalWrite(LED_PIN, LOW);
 
-  // full loop takes ~10 seconds, so 30 loops = ~300 sec = ~5 min
+  // sleep 8 seconds * 30 loops = 240 sec = 4 min
   for (int i=0; i<30; i++)
     powerDown(WDTO_8S);
 }
