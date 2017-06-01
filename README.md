@@ -18,3 +18,9 @@ and Paul Stoffregen's [OneWire library](https://github.com/PaulStoffregen/OneWir
 # Battery life
 
 This setup sleeps at around 90 µW and wakes up every 4 minutes to draw 10 mW for half a second. Using a 2300 mAh NiMH AA battery, this translates to over 3 years of battery life. The self-discharge of normal NiMH batteries is much bigger than that, so use a low-self-discharge NiMH2 type battery (or use a LiPo).
+
+# Illustration
+
+This is an illustration with some roughly matching components I found in Fritzing. It's not perfectly accurate.
+
+![Image of tinytemp module](https://github.com/zagor/tinytemp/blob/master/tinytemp.png)
